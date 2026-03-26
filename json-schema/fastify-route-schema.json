@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/fastify/json-schema/fastify-route-schema.json",
+  "title": "Fastify Route Schema Definition",
+  "description": "JSON Schema for Fastify route schema definitions used for request validation and response serialization.",
+  "type": "object",
+  "properties": {
+    "method": {
+      "description": "HTTP method(s) for the route.",
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"]
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"]
+          }
+        }
+      ]
+    },
+    "url": {
+      "type": "string",
+      "description": "Route URL path (e.g., /api/users/:id)."
+    },
+    "schema": {
+      "type": "object",
+      "description": "Schema definitions for request validation and response serialization.",
+      "properties": {
+        "body": {
+          "type": "object",
+          "description": "JSON Schema for request body validation.",
+          "additionalProperties": true
+        },
+        "querystring": {
+          "type": "object",
+          "description": "JSON Schema for query string parameter validation.",
+          "additionalProperties": true
+        },
+        "params": {
+          "type": "object",
+          "description": "JSON Schema for URL parameter validation.",
+          "additionalProperties": true
+        },
+        "headers": {
+          "type": "object",
+          "description": "JSON Schema for request header validation.",
+          "additionalProperties": true
+        },
+        "response": {
+          "type": "object",
+          "description": "Response schemas keyed by HTTP status code for serialization.",
+          "patternProperties": {
+            "^[1-5][0-9]{2}$": {
+              "type": "object",
+              "description": "JSON Schema for response body at this status code.",
+              "additionalProperties": true
+            },
+            "^2xx$": {
+              "type": "object",
+              "description": "JSON Schema for all 2xx responses.",
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        },
+        "tags": {
+          "type": "array",
+          "description": "OpenAPI tags for documentation.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "summary": {
+          "type": "string",
+          "description": "OpenAPI summary for the route."
+        },
+        "description": {
+          "type": "string",
+          "description": "OpenAPI description for the route."
+        },
+        "consumes": {
+          "type": "array",
+          "description": "Accepted content types.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "produces": {
+          "type": "array",
+          "description": "Produced content types.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "security": {
+          "type": "array",
+          "description": "OpenAPI security requirements.",
+          "items": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "attachValidation": {
+      "type": "boolean",
+      "description": "Attach validation errors to the request instead of sending 400.",
+      "default": false
+    },
+    "exposeHeadRoute": {
+      "type": "boolean",
+      "description": "Automatically create a HEAD route for GET routes.",
+      "default": true
+    },
+    "prefixTrailingSlash": {
+      "type": "string",
+      "description": "How to handle trailing slashes when a prefix is set.",
+      "enum": ["slash", "no-slash", "both"],
+      "default": "both"
+    },
+    "bodyLimit": {
+      "type": "integer",
+      "description": "Maximum allowed body size for this route in bytes."
+    },
+    "logLevel": {
+      "type": "string",
+      "description": "Route-specific log level.",
+      "enum": ["trace", "debug", "info", "warn", "error", "fatal", "silent"]
+    },
+    "config": {
+      "type": "object",
+      "description": "Custom route-level configuration.",
+      "additionalProperties": true
+    },
+    "constraints": {
+      "type": "object",
+      "description": "Custom route constraints (e.g., version, host).",
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Version constraint for content-type versioning."
+        },
+        "host": {
+          "type": "string",
+          "description": "Host constraint for virtual hosting."
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "required": ["method", "url"],
+  "additionalProperties": true
+}

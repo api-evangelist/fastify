@@ -39,7 +39,13 @@ apis:
       - JSON Schema
       - TypeScript
       - Frameworks
-    properties: []
+    properties:
+      - type: JSONSchema
+        url: >-
+          https://raw.githubusercontent.com/api-evangelist/fastify/refs/heads/main/json-schema/fastify-route-schema.json
+      - type: JSONSchema
+        url: >-
+          https://raw.githubusercontent.com/api-evangelist/fastify/refs/heads/main/json-schema/fastify-plugin-config.json
 common:
   - type: Website
     url: https://fastify.dev/

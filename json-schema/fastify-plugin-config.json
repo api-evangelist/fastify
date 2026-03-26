@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/fastify/json-schema/fastify-plugin-config.json",
+  "title": "Fastify Plugin and Server Configuration",
+  "description": "JSON Schema for Fastify server instance options and plugin configuration patterns.",
+  "type": "object",
+  "properties": {
+    "logger": {
+      "description": "Logger configuration (Pino).",
+      "oneOf": [
+        { "type": "boolean" },
+        {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "string",
+              "enum": ["trace", "debug", "info", "warn", "error", "fatal", "silent"],
+              "default": "info"
+            },
+            "prettyPrint": {
+              "type": "boolean",
+              "description": "Enable pretty printing (dev only).",
+              "default": false
+            },
+            "serializers": {
+              "type": "object",
+              "description": "Custom serializers for log fields.",
+              "additionalProperties": true
+            },
+            "redact": {
+              "type": "array",
+              "description": "Paths to redact from logs.",
+              "items": {
+                "type": "string"
+              }
+            },
+            "file": {
+              "type": "string",
+              "description": "Log output file path."
+            },
+            "transport": {
+              "type": "object",
+              "description": "Pino transport configuration.",
+              "properties": {
+                "target": {
+                  "type": "string"
+                },
+                "options": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        }
+      ]
+    },
+    "ajv": {
+      "type": "object",
+      "description": "Ajv (JSON Schema validator) configuration.",
+      "properties": {
+        "customOptions": {
+          "type": "object",
+          "description": "Custom Ajv options.",
+          "properties": {
+            "removeAdditional": {
+              "type": "boolean",
+              "default": false
+            },
+            "useDefaults": {
+              "type": "boolean",
+              "default": true
+            },
+            "coerceTypes": {
+              "type": "boolean",
+              "default": true
+            },
+            "allErrors": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "additionalProperties": true
+        },
+        "plugins": {
+          "type": "array",
+          "description": "Ajv plugins to load.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "http2": {
+      "type": "boolean",
+      "description": "Enable HTTP/2 support.",
+      "default": false
+    },
+    "https": {
+      "type": "object",
+      "description": "HTTPS/TLS configuration.",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "Path to TLS private key or key contents."
+        },
+        "cert": {
+          "type": "string",
+          "description": "Path to TLS certificate or certificate contents."
+        },
+        "allowHTTP1": {
+          "type": "boolean",
+          "description": "Allow HTTP/1.1 fallback with HTTP/2.",
+          "default": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "connectionTimeout": {
+      "type": "integer",
+      "description": "Connection timeout in milliseconds.",
+      "default": 0
+    },
+    "keepAliveTimeout": {
+      "type": "integer",
+      "description": "Keep-alive timeout in milliseconds.",
+      "default": 72000
+    },
+    "maxParamLength": {
+      "type": "integer",
+      "description": "Maximum parameter length for URL params.",
+      "default": 100
+    },
+    "bodyLimit": {
+      "type": "integer",
+      "description": "Default maximum body size in bytes.",
+      "default": 1048576
+    },
+    "caseSensitive": {
+      "type": "boolean",
+      "description": "Case-sensitive routing.",
+      "default": true
+    },
+    "ignoreTrailingSlash": {
+      "type": "boolean",
+      "description": "Ignore trailing slashes in routes.",
+      "default": false
+    },
+    "ignoreDuplicateSlashes": {
+      "type": "boolean",
+      "description": "Ignore duplicate slashes in routes.",
+      "default": false
+    },
+    "disableRequestLogging": {
+      "type": "boolean",
+      "description": "Disable automatic request logging.",
+      "default": false
+    },
+    "requestIdHeader": {
+      "type": "string",
+      "description": "Header name to use for request ID.",
+      "default": "request-id"
+    },
+    "requestIdLogLabel": {
+      "type": "string",
+      "description": "Label for request ID in logs.",
+      "default": "reqId"
+    },
+    "pluginTimeout": {
+      "type": "integer",
+      "description": "Plugin load timeout in milliseconds.",
+      "default": 10000
+    },
+    "forceCloseConnections": {
+      "description": "Force close connections on server close.",
+      "oneOf": [
+        { "type": "boolean" },
+        { "type": "string", "const": "idle" }
+      ],
+      "default": "idle"
+    },
+    "trustProxy": {
+      "description": "Trust proxy configuration.",
+      "oneOf": [
+        { "type": "boolean" },
+        { "type": "string" },
+        { "type": "integer" },
+        { "type": "array", "items": { "type": "string" } }
+      ],
+      "default": false
+    },
+    "return503OnClosing": {
+      "type": "boolean",
+      "description": "Return 503 when server is closing.",
+      "default": true
+    }
+  },
+  "additionalProperties": true
+}
