@@ -9,13 +9,12 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - APIs
-  - Node.js
-  - JavaScript
-  - High Performance
-  - JSON Schema
-  - TypeScript
   - Frameworks
+  - High Performance
+  - JavaScript
+  - JSON Schema
+  - Node.js
+  - TypeScript
 url: >-
   https://raw.githubusercontent.com/api-evangelist/fastify/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -32,13 +31,12 @@ apis:
       and TypeScript support out of the box.
     humanURL: https://fastify.dev/
     tags:
-      - APIs
-      - Node.js
-      - JavaScript
-      - High Performance
-      - JSON Schema
-      - TypeScript
       - Frameworks
+      - High Performance
+      - JavaScript
+      - JSON Schema
+      - Node.js
+      - TypeScript
     properties:
       - type: JSONSchema
         url: >-
