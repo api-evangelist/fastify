@@ -1,0 +1,13 @@
+{
+  "repo": "fastify",
+  "feeds": [
+    {
+      "source": "https://medium.com/@fastifyjs",
+      "feed_url": "https://medium.com/@fastifyjs/feed",
+      "saved": 7,
+      "title": "Stories by Fastify on Medium"
+    }
+  ],
+  "post_count": 7,
+  "fetched": "2026-05-03T23:27:54Z"
+}
