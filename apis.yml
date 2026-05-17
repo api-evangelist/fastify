@@ -49,11 +49,11 @@ common:
     url: https://fastify.dev/
   - type: Documentation
     url: https://fastify.dev/docs/latest/
-  - type: Getting Started
+  - type: GettingStarted
     url: https://fastify.dev/docs/latest/Guides/Getting-Started/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/fastify
-  - type: GitHub Repository
+  - type: GitHubRepository
     url: https://github.com/fastify/fastify
   - type: Blog
     url: https://medium.com/@fastifyjs
