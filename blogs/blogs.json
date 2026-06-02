@@ -2,12 +2,20 @@
   "repo": "fastify",
   "feeds": [
     {
-      "source": "https://medium.com/@fastifyjs",
+      "source": "https://medium.com/@fastifyjs/feed",
       "feed_url": "https://medium.com/@fastifyjs/feed",
-      "title": "Stories by Fastify on Medium",
-      "saved": 2
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://github.com/fastify/fastify",
+      "feed_url": "https://github.com/fastify/fastify",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 9,
-  "fetched": "2026-05-17T20:20:35Z"
+  "fetched": "2026-06-01T23:35:02Z"
 }
