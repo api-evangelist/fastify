@@ -7,7 +7,7 @@ description: >-
   automatic serialization, comprehensive logging with Pino, and TypeScript
   support out of the box.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Frameworks
   - High Performance
