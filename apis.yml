@@ -65,7 +65,7 @@ common:
     url: https://fastify.dev/benchmarks/
   - type: Integrations
     url: https://fastify.dev/ecosystem/
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://fastify.dev/llms.txt
 integrations:
   - name: Fastify Cheetah
