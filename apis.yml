@@ -45,6 +45,8 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/fastify/refs/heads/main/json-schema/fastify-plugin-config.json
 common:
+  - type: DomainSecurity
+    url: security/fastify-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/fastify-dev
   - type: Website
