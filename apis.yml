@@ -57,6 +57,19 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/fastify/refs/heads/main/json-schema/fastify-plugin-config.json
 common:
+  - type: IssueTracker
+    url: https://github.com/fastify/fastify/issues
+  - type: Releases
+    url: https://github.com/fastify/fastify/releases
+  - type: SecurityPolicy
+    url: https://github.com/fastify/fastify/blob/main/SECURITY.md
+  - type: CodeOfConduct
+    url: https://github.com/fastify/fastify/blob/main/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/fastify/fastify/blob/main/CONTRIBUTING.md
+  - type: License
+    name: MIT
+    url: https://github.com/fastify/fastify/blob/main/LICENSE
   - type: DomainSecurity
     url: security/fastify-domain-security.yml
   - type: LinkedIn
