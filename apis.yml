@@ -24,6 +24,13 @@ tags:
   - Frameworks
   - High Performance
   - JavaScript
+  - JSON-Schema
+  - Node.js
+  - TypeScript
+tags_raw:
+  - Frameworks
+  - High Performance
+  - JavaScript
   - JSON Schema
   - Node.js
   - TypeScript
@@ -43,6 +50,13 @@ apis:
       and TypeScript support out of the box.
     humanURL: https://fastify.dev/
     tags:
+      - Frameworks
+      - High Performance
+      - JavaScript
+      - JSON-Schema
+      - Node.js
+      - TypeScript
+    tags_raw:
       - Frameworks
       - High Performance
       - JavaScript
