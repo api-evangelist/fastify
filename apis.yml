@@ -33,7 +33,7 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fastify.png
 tags:
-  - Frameworks
+  - Framework
   - High Performance
   - JavaScript
   - JSON-Schema
@@ -62,7 +62,7 @@ apis:
       and TypeScript support out of the box.
     humanURL: https://fastify.dev/
     tags:
-      - Frameworks
+      - Framework
       - High Performance
       - JavaScript
       - JSON-Schema
