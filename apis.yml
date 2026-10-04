@@ -36,7 +36,7 @@ tags:
   - Framework
   - High Performance
   - JavaScript
-  - JSON-Schema
+  - JSON Schema
   - Node.js
   - TypeScript
 tags_raw:
@@ -46,6 +46,7 @@ tags_raw:
   - JSON Schema
   - Node.js
   - TypeScript
+  - JSON-Schema
 url: >-
   https://raw.githubusercontent.com/api-evangelist/fastify/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -65,7 +66,7 @@ apis:
       - Framework
       - High Performance
       - JavaScript
-      - JSON-Schema
+      - JSON Schema
       - Node.js
       - TypeScript
     tags_raw:
@@ -75,6 +76,7 @@ apis:
       - JSON Schema
       - Node.js
       - TypeScript
+      - JSON-Schema
     properties:
       - type: JSONSchema
         url: >-
